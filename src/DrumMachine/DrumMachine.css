@@ -1,0 +1,12 @@
+#drum-machine{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#display{
+    display: flex;
+    flex-flow: row wrap;
+
+    width: 300px;
+}

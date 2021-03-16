@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import './DramPad.css'
+import './DrumPad.css'
 
-const DramPad = ( { id, soundSrc, playSound } ) => {
+const DrumPad = ( { id, soundSrc, playSound } ) => {
   const [className, setClassName] = useState('drum-pad')
   const padKey = id.toUpperCase()
   
@@ -21,4 +21,4 @@ const DramPad = ( { id, soundSrc, playSound } ) => {
   )
 }
 
-export default DramPad
+export default DrumPad

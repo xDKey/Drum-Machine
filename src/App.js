@@ -1,7 +1,7 @@
-import DramMachine from './DramMachine/DramMachine'
+import DrumMachine from './DrumMachine/DrumMachine'
 
 const App = () => {
-  return <DramMachine />
+  return <DrumMachine />
 }
 
 export default App;

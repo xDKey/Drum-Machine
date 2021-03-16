@@ -1,0 +1,23 @@
+.toggle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toggle_outer{
+    padding: 5px;
+    width: 70px;
+    height: 30px;
+    background: gray;
+
+    display: flex;
+    align-items: center;
+    
+}
+
+.toggle_inner{
+    width: 30px;
+    height: 30px;
+    background: cyan;
+    right: 0;
+}
