@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react'
 import './DramPad.css'
 
 const DramPad = ( { id, soundSrc, playSound } ) => {
-  const [className, setClassName] = useState('dram-pad')
+  const [className, setClassName] = useState('drum-pad')
   const padKey = id.toUpperCase()
   
   useEffect(() => {
-    setTimeout(() => setClassName('dram-pad'), 100)
+    setTimeout(() => setClassName('drum-pad'), 100)
   }, [className])
 
   const isPress = () => {
-    setClassName('dram-pad onpress')
+    setClassName('drum-pad onpress')
 
   }
 
