@@ -1,9 +1,7 @@
-function App() {
-  return (
-    <div className="App">
+import DramMachine from './DramMachine/DramMachine'
 
-    </div>
-  );
+const App = () => {
+  return <DramMachine />
 }
 
 export default App;
