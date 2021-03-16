@@ -11,7 +11,6 @@ const DramPad = ( { id, soundSrc, playSound } ) => {
 
   const isPress = () => {
     setClassName('drum-pad onpress')
-
   }
 
 
