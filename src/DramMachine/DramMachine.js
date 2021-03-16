@@ -19,6 +19,7 @@ const DramMachine = () => {
         
         const sound = document.querySelector(currentIdx)
 
+        sound.load()
         sound.play()
       }
 
