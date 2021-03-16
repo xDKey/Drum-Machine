@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { padList, keyList } from './padList'
+import { useState, useRef, useEffect } from 'react'
+import { padList } from './padList'
 import DrumPad from '../DrumPad/DrumPad'
 import PowerToggle from '../PowerToggle/PowerToggle'
 import './DrumMachine.css'
@@ -7,35 +7,28 @@ import './DrumMachine.css'
 
 const DrumMachine = () => {
     const [isPowerOn, setIsPowerOn] = useState(true)
+    const [pressedKey, setPressedKey] = useState(null)
+    
+    const mainWindow = useRef()
 
     useEffect(() => {
-        const canPlaySound = (event) => {
-          if ( keyList.includes(event.key) ) playSound(event)
-        }
+      mainWindow.current.focus()
+    }, [])
 
-        window.addEventListener('keypress', canPlaySound)
-
-        return () => window.removeEventListener('keypress', canPlaySound)
-    }, [isPowerOn])
-
-    const playSound = ({ target, key }) => {
-        if (isPowerOn) {
-          const currentIdx = key ? 
-          '#' + key.toUpperCase():
-          '#' + target.id.toUpperCase()
-          
-          const sound = document.querySelector(currentIdx)
-
-          sound.load()
+    const playSound = (sound) => {
+      if (isPowerOn) {
+          sound.currentTime = 0
           sound.play()
         }
-      }
+        setTimeout(() => setPressedKey(null), 1)
+        
+    }
 
-    const drumPadList = padList.map(pad => <DrumPad id={pad.key} soundSrc={pad.soundSrc} key={pad.key} playSound={playSound} />)
+    const drumPadList = padList.map(pad => <DrumPad id={pad.key} soundSrc={pad.soundSrc} key={pad.key} playSound={playSound} pressedKey={pressedKey}/>)
 
     return (
-      <div className="App">
-        <div id='drum-machine'>
+      <div className="App" >
+        <div id='drum-machine' onKeyPress={(e) => setPressedKey(e.key)} tabIndex={0} ref={mainWindow}>
           <div id='display'>
             {drumPadList}
           </div>
