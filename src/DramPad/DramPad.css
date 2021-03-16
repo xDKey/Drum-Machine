@@ -1,0 +1,19 @@
+.dram-pad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 75px;
+    height: 75px;
+
+    margin: 5px;
+
+    border: 2px solid black;
+    box-shadow: 2px 2px 5px;
+}
+
+.onpress{
+    background: chocolate;
+    transform: scale(0.9);
+}

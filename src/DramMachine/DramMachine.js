@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import {padList, keyList} from './padList'
 import DramPad from '../DramPad/DramPad'
+import './DramMachine.css'
 
 const DramMachine = () => {
     useEffect(() => {
@@ -10,11 +11,14 @@ const DramMachine = () => {
           })
     }, [])
 
+
     const playSound = ({ target, key }) => {
         const currentIdx = key ? 
         '#' + key.toUpperCase():
         '#' + target.id.toUpperCase()
+        
         const sound = document.querySelector(currentIdx)
+
         sound.play()
       }
 
