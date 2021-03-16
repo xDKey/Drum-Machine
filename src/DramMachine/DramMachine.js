@@ -3,11 +3,13 @@ import {padList, keyList} from './padList'
 import DramPad from '../DramPad/DramPad'
 
 const DramMachine = () => {
+    useEffect(() => {
         window.addEventListener('keypress', (event) => {
             const key = event.key
             if ( keyList.includes(key) ) playSound(event)
           })
-    
+    }, [])
+
     const playSound = ({ target, key }) => {
         const currentIdx = key ? 
         '#' + key.toUpperCase():
