@@ -18,7 +18,6 @@ const DrumPad = ( { id, soundSrc, playSound, pressedKey } ) => {
   const clickHandle = () => {
     playSound(ref.current)
   }
-  
 
   return (
     <div onClick={clickHandle} className={className} id={id}> {padKey}
